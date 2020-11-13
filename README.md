@@ -2,8 +2,23 @@
 
 The Pytorch Implementation of Variable Optimizers/ Neural Variable Risk Minimization. 
 
-The algortihms are based on our paper: 
+The algortihms are proposed in our paper: 
 [Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting.](https://arxiv.org/abs/2011.06220)
+
+
+# Why Artificial Neural Variability?
+
+It helps DNNs learn from neuroscience.
+
+At negligible computational and coding costs, our neuroscience-inspired optimization method can 
+
+(1) enhance the robustness to weight perturbation;
+
+(2) improve generalizability;
+
+(3) relieve the memorization of noisy labels;
+
+(4) mitigate catastrophic forgetting.
 
 
 # The environment is as bellow:
@@ -23,7 +38,7 @@ You may use it as a standard Pytorch optimizer.
 ```python
 import variable_optim
 
-optimizer = variable_optim.VSGD(net.parameters(), lr=lr, variability=vb, num_iters=num_iters)
+optimizer = variable_optim.VSGD(net.parameters(), lr=lr, variability=variability, num_iters=num_iters)
 ```
 
 
