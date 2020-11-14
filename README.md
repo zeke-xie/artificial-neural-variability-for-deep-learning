@@ -24,8 +24,7 @@ At negligible computational and coding costs, our neuroscience-inspired optimiza
 # How good is Artificial Neural Variability?
 
 ![The learning curves of ResNet-34 on CIFAR-10 with 40% asymmetric label noise. NVRM prevents overitting noisy labels effectively, while SGD almost memorizes all noisy labels.](/figure/CIFAR10_acc_resnet34_LabelNoise40.png?raw=true "Title")
-
-
+*Figure 1. The learning curves of ResNet-34 on CIFAR-10 with 40% asymmetric label noise. NVRM prevents overitting noisy labels effectively, while SGD almost memorizes all noisy labels.*
 
 # The environment is as bellow:
 
