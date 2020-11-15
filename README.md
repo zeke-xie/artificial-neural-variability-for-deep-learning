@@ -8,6 +8,8 @@ The algortihms are proposed in our paper:
 
 # Why Artificial Neural Variability?
 
+We introduce a neuroscience concept, called neural variability, into deep learning. 
+
 It helps DNNs learn from neuroscience.
 
 At negligible computational and coding costs, our neuroscience-inspired optimization method can 
