@@ -50,5 +50,13 @@ optimizer = variable_optim.VSGD(net.parameters(), lr=lr, variability=variability
 
 # Citing
 
-If you use artificieal neural variabiliy in your work, please cite [Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting](https://arxiv.org/abs/2011.06220).
+If you use artificieal neural variabiliy in your work, please cite
 
+```
+@article{xie2020artificial,
+  title={Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting},
+  author={Xie, Zeke and He, Fengxiang and Fu, Shaopeng and Sato, Issei and Tao, Dacheng and Sugiyama, Masashi},
+  journal={arXiv preprint arXiv:2011.06220},
+  year={2020}
+}
+```
