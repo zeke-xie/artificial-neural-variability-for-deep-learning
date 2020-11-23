@@ -43,9 +43,9 @@ PyTorch >= 1.4.0
 You may use it as a standard Pytorch optimizer.
 
 ```python
-import variable_optim
+from variable_optim import VSGD
 
-optimizer = variable_optim.VSGD(net.parameters(), lr=lr, variability=variability, num_iters=num_iters)
+optimizer = VSGD(net.parameters(), lr=lr, variability=variability, num_iters=num_iters, weight_decay=weight_decay)
 ```
 
 # Citing
