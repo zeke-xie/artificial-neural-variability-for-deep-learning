@@ -3,7 +3,7 @@
 The Pytorch Implementation of Variable Optimizers/ Neural Variable Risk Minimization. 
 
 The algortihms are proposed in our paper: 
-[Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting](https://arxiv.org/abs/2011.06220).
+[Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting](https://arxiv.org/abs/2011.06220), which will appear in Neural Computation.
 
 
 # Why Artificial Neural Variability?
