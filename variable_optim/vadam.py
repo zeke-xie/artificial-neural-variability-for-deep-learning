@@ -24,10 +24,12 @@ class VAdam(Optimizer):
         amsgrad (boolean, optional): whether to use the AMSGrad variant of this
             algorithm from the paper `On the Convergence of Adam and Beyond`_
             (default: False)
+        decoupled (bool, optional): decoupled weight decay or L2 regularization 
+            (default: False)
     """
 
     def __init__(self, params, lr=1e-3, variability=1e-2, num_iters=1e3, betas=(0.9, 0.999), eps=1e-8,
-                 weight_decay=0, noise_type='Gaussian', amsgrad=False):
+                 weight_decay=0, noise_type='Gaussian', amsgrad=False, decoupled=False):
         if not 0.0 <= lr:
             raise ValueError("Invalid learning rate: {}".format(lr))
         if variability <= 0.0:
@@ -45,13 +47,14 @@ class VAdam(Optimizer):
         if noise_type not in {'Gaussian','Laplace','Uniform'}:
             raise ValueError("Invalid noise_type. Only Gaussian, Laplace, and Uniform are available.")
         defaults = dict(lr=lr, variability=variability, num_iters=num_iters, betas=betas, eps=eps,
-                        weight_decay=weight_decay, noise_type=noise_type, amsgrad=amsgrad)
+                        weight_decay=weight_decay, noise_type=noise_type, amsgrad=amsgrad, decoupled=decoupled)
         super(VAdam, self).__init__(params, defaults)
 
     def __setstate__(self, state):
         super(VAdam, self).__setstate__(state)
         for group in self.param_groups:
             group.setdefault('amsgrad', False)
+            group.setdefault('decoupled', False)
 
     @torch.no_grad()
     def step(self, closure=None):
@@ -102,8 +105,11 @@ class VAdam(Optimizer):
                 bias_correction1 = 1 - beta1 ** state['step']
                 bias_correction2 = 1 - beta2 ** state['step']
 
-                if group['weight_decay'] != 0:
-                    grad = grad.add(p, alpha=group['weight_decay'])
+                # Perform decoupled weight decay or L2 Regularization
+                if group['decoupled']:
+                    p.mul_(1 - group['lr'] * group['weight_decay'])
+                else:
+                    grad.add_(p.data, alpha=group['weight_decay'])
 
                 # Decay the first and second moment running average coefficient
                 exp_avg.mul_(beta1).add_(grad, alpha=1 - beta1)
