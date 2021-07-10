@@ -50,13 +50,16 @@ optimizer = VSGD(net.parameters(), lr=lr, variability=variability, num_iters=num
 
 # Citing
 
-If you use artificieal neural variabiliy in your work, please cite
+If you use artificieal neural variabiliy / NVRM in your work, please cite
 
 ```
-@article{xie2020artificial,
+@article{xie2021artificial,
   title={Artificial Neural Variability for Deep Learning: On Overfitting, Noise Memorization, and Catastrophic Forgetting},
   author={Xie, Zeke and He, Fengxiang and Fu, Shaopeng and Sato, Issei and Tao, Dacheng and Sugiyama, Masashi},
-  journal={arXiv preprint arXiv:2011.06220},
-  year={2020}
+  journal={Neural Computation},
+  year={2021}
+  volume={33},
+  number={8},
+  publisher={MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info~…}
 }
 ```
