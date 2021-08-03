@@ -60,6 +60,7 @@ If you use artificieal neural variabiliy / NVRM in your work, please cite
   year={2021}
   volume={33},
   number={8},
+  pages = {2163-2192},
   publisher={MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info~…}
 }
 ```
